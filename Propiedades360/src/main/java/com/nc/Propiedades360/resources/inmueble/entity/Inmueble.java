@@ -1,10 +1,15 @@
 package com.nc.Propiedades360.resources.inmueble.entity;
 
+import com.nc.Propiedades360.resources.Propietario.Entity.Propietario;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Data
+@Getter
+@Setter
 public class Inmueble {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,4 +48,7 @@ public class Inmueble {
     //TODO: PUEDE SER UNA ENTIDAD APARTE
     @Column(nullable = false)
     private String datosDeContacto;
+
+    @ManyToOne(targetEntity = Propietario.class)
+    private Propietario propietario;
 }

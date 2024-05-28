@@ -28,6 +28,10 @@ public class UsuarioService {
     }
 
     public Usuario actualizarPerfil(Usuario usuario) {
+        Optional<Usuario> usuarioEncontrado = usuarioRepository.findById(usuario.getId());
+        if (usuarioEncontrado.isEmpty()) {
+            return null;
+        }
         return usuarioRepository.save(usuario);
     }
 
