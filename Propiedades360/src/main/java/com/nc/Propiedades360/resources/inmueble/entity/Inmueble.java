@@ -16,8 +16,8 @@ public class Inmueble {
     private Long id;
 
 //   TODO: ESTA COLUMNA DEBE CAMBIARSE
-    @Column(nullable = false)
-    private Long propietarioId;
+    /*@Column(nullable = false)
+    private Long propietarioId;*/
 
     // TODO: EL TIPO PUEDE SER ENUM
     @Column(nullable = false)

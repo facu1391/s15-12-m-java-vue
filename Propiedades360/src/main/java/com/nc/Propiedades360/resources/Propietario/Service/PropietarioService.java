@@ -23,6 +23,20 @@ public class PropietarioService {
         this.propietarioRepository = propietarioRepository;
     }
 
+   //metodo crear propietario
+
+    public Propietario savePropietario(Propietario propietario) {
+        return propietarioRepository.save(propietario);
+    }
+
+    public Propietario getPropietarioById(Long id) {
+        Optional<Propietario> propietario = propietarioRepository.findById(id);
+        if (propietario.isPresent()) {
+            return propietario.get();
+        } else {
+            throw new RuntimeException("Propietario no encontrado");
+        }
+    }
     // Método para actualizar un inmueble con validaciones
     @Transactional
     public Inmueble publicarInmueble(Inmueble inmueble, Long propietarioId) {

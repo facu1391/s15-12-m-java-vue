@@ -1,8 +1,7 @@
-package com.nc.Propiedades360.resources.Propietario.Entity;
+package com.nc.Propiedades360.resources.Cliente.Entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.nc.Propiedades360.resources.Usuario.Entity.Usuario;
 import com.nc.Propiedades360.resources.inmueble.entity.Inmueble;
+import com.nc.Propiedades360.resources.pago.entity.Pago;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,12 +11,12 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "propietario")
+@Table(name = "cliente")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Propietario {
+public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,8 +34,16 @@ public class Propietario {
     @Column(nullable = false)
     private String telefono;
 
-    @JsonIgnore
-    @OneToMany(targetEntity = Inmueble.class, fetch = FetchType.LAZY, mappedBy = "propietario")
-    private List<Inmueble> inmuebles;
+    /*public void buscarInmueble() {
+    }
+
+
+    public void reservarInmueble(int inmuebleId) {
+
+    }
+
+    public void realizarPago(Pago pago) {
+
+    }*/
 
 }

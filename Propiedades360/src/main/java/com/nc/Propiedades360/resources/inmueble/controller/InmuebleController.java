@@ -41,7 +41,7 @@ public class InmuebleController {
         Optional<Inmueble> propertyOptional = inmuebleService.findById(id);
         if (propertyOptional.isPresent()) {
             Inmueble property = propertyOptional.get();
-            property.setPropietarioId(propertyDetails.getPropietarioId());
+            //property.setPropietario(propertyDetails.getPropietario());
             property.setTipo(propertyDetails.getTipo());
             property.setDireccion(propertyDetails.getDireccion());
             property.setFoto(propertyDetails.getFoto());
