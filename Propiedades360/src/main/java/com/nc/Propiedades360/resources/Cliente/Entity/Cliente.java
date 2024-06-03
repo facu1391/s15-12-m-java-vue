@@ -34,16 +34,4 @@ public class Cliente {
     @Column(nullable = false)
     private String telefono;
 
-    /*public void buscarInmueble() {
-    }
-
-
-    public void reservarInmueble(int inmuebleId) {
-
-    }
-
-    public void realizarPago(Pago pago) {
-
-    }*/
-
 }

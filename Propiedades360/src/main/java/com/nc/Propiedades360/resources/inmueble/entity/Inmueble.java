@@ -1,5 +1,6 @@
 package com.nc.Propiedades360.resources.inmueble.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.nc.Propiedades360.resources.Propietario.Entity.Propietario;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -49,6 +50,7 @@ public class Inmueble {
     @Column(nullable = false)
     private String datosDeContacto;
 
+    @JsonBackReference
     @ManyToOne(targetEntity = Propietario.class)
     private Propietario propietario;
 }

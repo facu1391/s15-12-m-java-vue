@@ -13,49 +13,44 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/inmueble")
 public class InmuebleController {
-    @Autowired
     private InmuebleService inmuebleService;
 
+    public InmuebleController(InmuebleService inmuebleService) {
+        this.inmuebleService = inmuebleService;
+    }
+
     @GetMapping
-    public List<Inmueble> getAllProperties() {
-        return inmuebleService.findAll();
+    public ResponseEntity<List<Inmueble>> getAllProperties() {
+        List<Inmueble> inmuebles = inmuebleService.findAll();
+        return ResponseEntity.ok(inmuebles);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Inmueble> getPropertyById(@PathVariable Long id) {
-        Optional<Inmueble> inmueble = inmuebleService.findById(id);
-        if (inmueble.isPresent()) {
-            return ResponseEntity.ok(inmueble.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        Inmueble inmueble = inmuebleService.findById(id);
+        return ResponseEntity.ok(inmueble);
     }
 
     @PostMapping
-    public Inmueble createInmueble(@RequestBody Inmueble inmueble) {
-        return inmuebleService.save(inmueble);
+    public ResponseEntity<Inmueble> createInmueble(@RequestBody Inmueble inmueble) {
+        Inmueble newInmueble = inmuebleService.save(inmueble);
+        return ResponseEntity.ok(newInmueble);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Inmueble> updateProperty(@PathVariable Long id, @RequestBody Inmueble propertyDetails) {
-        Optional<Inmueble> propertyOptional = inmuebleService.findById(id);
-        if (propertyOptional.isPresent()) {
-            Inmueble property = propertyOptional.get();
-            //property.setPropietario(propertyDetails.getPropietario());
-            property.setTipo(propertyDetails.getTipo());
-            property.setDireccion(propertyDetails.getDireccion());
-            property.setFoto(propertyDetails.getFoto());
-            property.setPrecio(propertyDetails.getPrecio());
-            property.setNumeroDeHabitaciones(propertyDetails.getNumeroDeHabitaciones());
-            property.setNumeroDeBanios(propertyDetails.getNumeroDeBanios());
-            property.setEstado(propertyDetails.getEstado());
-            property.setSuperficie(propertyDetails.getSuperficie());
-            property.setDatosDeContacto(propertyDetails.getDatosDeContacto());
-            Inmueble updatedInmueble = inmuebleService.save(property);
-            return ResponseEntity.ok(updatedInmueble);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        Inmueble updatedInmueble = inmuebleService.findById(id);
+        updatedInmueble.setTipo(propertyDetails.getTipo());
+        updatedInmueble.setDireccion(propertyDetails.getDireccion());
+        updatedInmueble.setFoto(propertyDetails.getFoto());
+        updatedInmueble.setPrecio(propertyDetails.getPrecio());
+        updatedInmueble.setNumeroDeHabitaciones(propertyDetails.getNumeroDeHabitaciones());
+        updatedInmueble.setNumeroDeBanios(propertyDetails.getNumeroDeBanios());
+        updatedInmueble.setEstado(propertyDetails.getEstado());
+        updatedInmueble.setSuperficie(propertyDetails.getSuperficie());
+        updatedInmueble.setDatosDeContacto(propertyDetails.getDatosDeContacto());
+        Inmueble savedInmueble = inmuebleService.save(updatedInmueble);
+        return ResponseEntity.ok(savedInmueble);
     }
 
     @DeleteMapping("/{id}")
@@ -64,14 +59,9 @@ public class InmuebleController {
         return ResponseEntity.noContent().build();
     }
 
-
     @PutMapping("/actualizarEstado/{id}")
     public ResponseEntity<Void> actualizarEstadoInmueble(@PathVariable Long id, @RequestBody String estado) {
-        Optional<Inmueble> updatedInmueble = inmuebleService.updateEstado(id, estado);
-        if (updatedInmueble.isPresent()) {
-            return ResponseEntity.ok().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        inmuebleService.updateEstado(id, estado);
+        return ResponseEntity.ok().build();
     }
 }

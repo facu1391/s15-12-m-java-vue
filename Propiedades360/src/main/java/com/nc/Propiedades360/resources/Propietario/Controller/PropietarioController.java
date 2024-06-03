@@ -16,8 +16,8 @@ public class PropietarioController {
     private final PropietarioService propietarioService;
 
     @Autowired
-    public PropietarioController(PropietarioService usuarioService) {
-        this.propietarioService = usuarioService;
+    public PropietarioController(PropietarioService propietarioService) {
+        this.propietarioService = propietarioService;
     }
 
     @PostMapping("/create")
@@ -33,23 +33,22 @@ public class PropietarioController {
     }
 
     @PostMapping("/publicar-inmueble")
-    public Inmueble publicarInmueble(@RequestBody Inmueble inmueble, @RequestParam Long propietarioId) {
-        return propietarioService.publicarInmueble(inmueble, propietarioId);
+    public ResponseEntity<Inmueble> publicarInmueble(@RequestBody Inmueble inmueble, @RequestParam Long propietarioId) {
+        Inmueble newInmueble = propietarioService.publicarInmueble(inmueble, propietarioId);
+        return ResponseEntity.ok(newInmueble);
     }
 
-
-
-
     @PutMapping("/actualizar-inmueble/{inmuebleId}")
-    public Inmueble actualizarInmueble(@PathVariable("inmuebleId") int inmuebleId, @RequestBody Inmueble inmueble) {
-        return propietarioService.actualizarInmueble(inmuebleId, inmueble);
+    public ResponseEntity<Inmueble> actualizarInmueble(@PathVariable Long inmuebleId, @RequestBody Inmueble inmueble) {
+        Inmueble updatedInmueble = propietarioService.actualizarInmueble(inmuebleId, inmueble);
+        return ResponseEntity.ok(updatedInmueble);
     }
 
     @DeleteMapping("/eliminar-inmueble/{inmuebleId}")
-    public void eliminarInmueble(@PathVariable Long inmuebleId) {
+    public ResponseEntity<Void> eliminarInmueble(@PathVariable Long inmuebleId) {
         propietarioService.eliminarInmueble(inmuebleId);
+        return ResponseEntity.noContent().build();
     }
-
 
 
 }

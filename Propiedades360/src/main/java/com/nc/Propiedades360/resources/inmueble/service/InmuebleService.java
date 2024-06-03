@@ -10,15 +10,19 @@ import java.util.Optional;
 
 @Service
 public class InmuebleService {
-    @Autowired
     private InmuebleRepository inmuebleRepository;
+
+    public InmuebleService(InmuebleRepository inmuebleRepository) {
+        this.inmuebleRepository = inmuebleRepository;
+    }
 
     public List<Inmueble> findAll() {
         return inmuebleRepository.findAll();
     }
 
-    public Optional<Inmueble> findById(Long id) {
-        return inmuebleRepository.findById(id);
+    public Inmueble findById(Long id) {
+        return inmuebleRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Inmueble no encontrado"));
     }
 
     public Inmueble save(Inmueble inmueble) {
@@ -29,15 +33,10 @@ public class InmuebleService {
         inmuebleRepository.deleteById(id);
     }
 
-    public Optional<Inmueble> updateEstado(Long id, String estado) {
-        Optional<Inmueble> inmuebleOptional = inmuebleRepository.findById(id);
-        if (inmuebleOptional.isPresent()) {
-            Inmueble inmueble = inmuebleOptional.get();
-            inmueble.setEstado(estado);
-            inmuebleRepository.save(inmueble);
-            return Optional.of(inmueble);
-        } else {
-            return Optional.empty();
-        }
+    public Inmueble updateEstado(Long id, String estado) {
+        Inmueble inmueble = inmuebleRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Inmueble no encontrado"));
+        inmueble.setEstado(estado);
+        return inmuebleRepository.save(inmueble);
     }
 }

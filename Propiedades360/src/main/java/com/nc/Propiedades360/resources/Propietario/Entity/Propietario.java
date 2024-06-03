@@ -1,6 +1,7 @@
 package com.nc.Propiedades360.resources.Propietario.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.nc.Propiedades360.resources.Usuario.Entity.Usuario;
 import com.nc.Propiedades360.resources.inmueble.entity.Inmueble;
 import jakarta.persistence.*;
@@ -35,7 +36,7 @@ public class Propietario {
     @Column(nullable = false)
     private String telefono;
 
-    @JsonIgnore
+    @JsonManagedReference
     @OneToMany(targetEntity = Inmueble.class, fetch = FetchType.LAZY, mappedBy = "propietario")
     private List<Inmueble> inmuebles;
 
