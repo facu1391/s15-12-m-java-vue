@@ -11,8 +11,11 @@ import java.util.Optional;
 @Service
 public class ReservaService {
 
-    @Autowired
-    private ReservaRepository reservaRepository;
+    private final ReservaRepository reservaRepository;
+
+    public ReservaService(ReservaRepository reservaRepository) {
+        this.reservaRepository = reservaRepository;
+    }
 
     public Optional<Reserva> findById(Long id) {
         return reservaRepository.findById(id);

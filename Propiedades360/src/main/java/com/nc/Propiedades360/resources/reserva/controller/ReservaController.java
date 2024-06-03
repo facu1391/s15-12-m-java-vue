@@ -14,8 +14,12 @@ import java.util.Optional;
 @RequestMapping("/reservas")
 public class ReservaController {
 
-    @Autowired
-    private ReservaService reservaService;
+    private final ReservaService reservaService;
+
+    public ReservaController(ReservaService reservaService) {
+        this.reservaService = reservaService;
+    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<Reserva> detalleReserva(@PathVariable Long id) {
