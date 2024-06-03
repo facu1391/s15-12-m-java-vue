@@ -2,6 +2,7 @@ package com.nc.Propiedades360.resources.Cliente.Service;
 
 import com.nc.Propiedades360.resources.Cliente.Entity.Cliente;
 import com.nc.Propiedades360.resources.Cliente.Repository.ClienteRepository;
+import com.nc.Propiedades360.resources.Propietario.Entity.Propietario;
 import com.nc.Propiedades360.resources.inmueble.entity.Inmueble;
 import com.nc.Propiedades360.resources.inmueble.repository.InmuebleRepository;
 import com.nc.Propiedades360.resources.pago.entity.Pago;
@@ -31,6 +32,16 @@ public class ClienteService {
         this.clienteRepository = clienteRepository;
         this.reservaRepository = reservaRepository;
         this.pagoRepository = pagoRepository;
+    }
+
+
+    public Cliente saveCliente(Cliente cliente) {
+        return clienteRepository.save(cliente);
+    }
+
+    public Cliente getClienteById(Long id) {
+        return clienteRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
     }
 
     @Transactional
