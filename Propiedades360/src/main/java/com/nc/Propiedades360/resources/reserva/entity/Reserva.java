@@ -25,12 +25,12 @@ public class Reserva {
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
 
-    @JsonBackReference
+    @JsonBackReference(value = "cliente-reservas")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    @JsonBackReference
+    @JsonBackReference(value = "inmueble-reservas")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "inmueble_id")
     private Inmueble inmueble;

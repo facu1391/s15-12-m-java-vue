@@ -37,11 +37,11 @@ public class Cliente {
     @Column(nullable = false)
     private String telefono;
 
-    @JsonManagedReference
+    @JsonManagedReference(value = "cliente-reservas")
     @OneToMany(targetEntity = Reserva.class, fetch = FetchType.LAZY, mappedBy = "cliente")
     private List<Reserva> reservas;
 
-    @JsonManagedReference
+    @JsonManagedReference(value = "cliente-visitas")
     @OneToMany(targetEntity = Visita.class, fetch = FetchType.LAZY, mappedBy = "cliente")
     private List<Visita> visitas;
 

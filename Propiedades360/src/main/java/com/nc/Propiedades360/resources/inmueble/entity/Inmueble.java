@@ -1,6 +1,7 @@
 package com.nc.Propiedades360.resources.inmueble.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.nc.Propiedades360.resources.Propietario.Entity.Propietario;
 import com.nc.Propiedades360.resources.reserva.entity.Reserva;
 import com.nc.Propiedades360.resources.visita.entity.Visita;
@@ -78,17 +79,17 @@ public class Inmueble {
 
 
     // Propietario
-    @JsonBackReference
+    @JsonBackReference(value = "propietario-inmuebles")
     @ManyToOne(fetch = FetchType.LAZY)
     private Propietario propietario;
 
     // Reservas
-    @JsonBackReference
+    @JsonManagedReference(value = "inmueble-reservas")
     @OneToMany(targetEntity = Reserva.class, fetch = FetchType.LAZY, mappedBy = "inmueble")
     private List<Reserva> reservas;
 
     // Visitas
-    @JsonBackReference
+    @JsonManagedReference(value = "inmueble-visitas")
     @OneToMany(targetEntity = Visita.class, fetch = FetchType.LAZY, mappedBy = "inmueble")
     private List<Visita> visitas;
 
