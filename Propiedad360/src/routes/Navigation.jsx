@@ -13,6 +13,9 @@ import ConfiguraciónPerfil from '../pages/ConfiguraciónPerfil/ConfiguraciónPe
 import PagoAlquiler from '../pages/PagoAlquiler/PagoAlquiler';
 import RevisaTuPago from '../pages/RevisaTuPago/RevisaTuPago';
 import OrdenDePago from '../pages/OrdenDePago/OrdenDePago';
+import Login from '../pages/Login/Login';
+import Registro from '../pages/Registro/Registro';
+import Inicio from '../pages/Inicio/Inicio';
 
 const routes = createBrowserRouter([
     {
@@ -62,6 +65,18 @@ const routes = createBrowserRouter([
     {
         path: "/orden-de-pago",
         element: <PageLayout> <OrdenDePago /> </PageLayout>  
+    },
+    {
+        path: "/login",
+        element: <PageLayout> <Login /> </PageLayout>
+    },
+    {
+        path: "/registro",
+        element: <PageLayout> <Registro /> </PageLayout>
+    },
+    {
+        path: "/iniciar-sesion",
+        element: <PageLayout> <Inicio /> </PageLayout>
     }
 ]);
 
