@@ -26,4 +26,4 @@ services:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 10s
       retries: 10
-jdbc:mysql://propiedades360.czwgqiquioqh.us-east-2.rds.amazonaws.com:3306/Propiedades360
+
