@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      DB_URL: jdbc:mysql://propiedades360.czwgqiquioqh.us-east-2.rds.amazonaws.com:3306/Propiedades360?createDatabaseIfNotExist=true&serverTimezone=UTC
+      DB_URL: jdbc:mysql://propiedades360.czwgqiquioqh.us-east-2.rds.amazonaws.com:3306/propiedades360?createDatabaseIfNotExist=true&serverTimezone=UTC
       DB_USER_NAME: root
       DB_PASSWORD: contrasenia
     restart: always
