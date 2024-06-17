@@ -3,7 +3,7 @@
 # Propiedades360
 
 ## Industria o Rubro:
-Inmuebles
+Compra y venta de Inmuebles
 
 ## Descripción:
 <div align="justify">
