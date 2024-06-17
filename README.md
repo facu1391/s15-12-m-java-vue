@@ -56,7 +56,7 @@ Propiedades360 es una web app que surge del deseo de simplificar y optimizar la 
 
 | <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>|
 |:-:|:-:|:-:|
-| **Facundo Nuñez**| **Sofi A. Soto**| **Alenjandro** |
+| **Facundo Nuñez**| **Sofi A. Soto**| **Alessandro Brizuela** |
 | <a href="https://github.com/facu1391"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/facundo-nu%C3%B1ez-380b9b234/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/sofi-24soto"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/sofia-soto-bb3b051bb/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/Ale0602"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="#"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
 <hr/>
