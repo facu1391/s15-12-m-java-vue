@@ -87,7 +87,7 @@ Propiedades360 es una web app que surge del deseo de simplificar y optimizar la 
 
 | <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>|
 |:-:|:-:|
-| **David Dos Santos** | **Carlos Simón del Carpio** |
+| **David dos Santos** | **Carlos Simón del Carpio** |
 | <a href="https://github.com/DdSDavid/DaviddosSantos"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="#"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/Simondelc"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/carlos-sim%C3%B3n-del-carpio/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
 <hr/>
@@ -101,7 +101,7 @@ Propiedades360 es una web app que surge del deseo de simplificar y optimizar la 
 
 | <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>|
 |:-:|
-| **David Dos Santos**|
+| **David dos Santos**|
 | <a href="https://github.com/DdSDavid/DaviddosSantos"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="#"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
 <hr/>
